@@ -15,8 +15,13 @@ $container['logger'] = function ($c) {
 
 // milight api
 $container['milight'] = function($c) {
-	$settings = $c->get('settings')['milight'];
-    $milight = new Milight($settings['milight_ip']);
+    $milight_controller_ips = $c->get('settings')['milight'];
+    $i = 0;
+    foreach ($milight_controller_ips as $ip)
+    {
+        $milight[$i] = new Milight($ip);
+        $i = $i + 1;
+    }
     return $milight;
 };
 

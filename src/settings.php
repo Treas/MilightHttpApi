@@ -4,10 +4,11 @@ return [
         'displayErrorDetails' => true, // set to false in production
         'addContentLengthHeader' => false, // Allow the web server to send the content-length header
 
-		
+
 		// Milight settings
         'milight' => [
-            'milight_ip' => '192.168.15.32',
+            0 => '192.168.15.34',
+            1 => '192.168.15.32',
         ],
 
         // Monolog settings
